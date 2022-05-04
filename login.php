@@ -7,17 +7,17 @@ include ('conexion.php');
 $usuario = strip_tags($_POST['usuario']);
 $contrasena = hash("sha256",strip_tags($_POST['contrasena']));
 
-//ejecuta consilta bd
-/*$consulta = "SELECT usuario, contrasena from usuario where usuario='".$usuario."'";
+//ejecuta consulta bd
+$consulta = "SELECT usuario, contrasena from usuario where usuario='".$usuario."'";
 $resultado = pg_query($con,$consulta);
 $resultado = pg_fetch_assoc($resultado);
 $miusuario = $resultado['usuario'];
-$micontrasena = substr($resultado['contrasena'], 2);*/
-//$ded = ($micontrasena == $contrasena);
-//echo $ded;
+$micontrasena = substr($resultado['contrasena'], 2);
+$ded = ($micontrasena == $contrasena);
+echo $ded;
 
 
-if (/*$usuario == $miusuario && $contrasena == $micontrasena*/$usuario == 'ivan' && $contrasena == hash("sha256", 'hola')) {
+if ($usuario == $miusuario && $contrasena == $micontrasena) {
 	//echo "coincide";
 	//se crea sesion
 	session_start();
