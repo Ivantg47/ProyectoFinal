@@ -7,13 +7,24 @@
   <link rel="stylesheet" href="css/estilo1.css" type="text/css" />
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/01.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/validar.js"></script>
 
   <title>Inicio sesion</title>
 </head>
 <body>
   <div class="login-page">
   <div class="form">
-    <form class="login-form" action="login.php" method="post">
+    <form id="formInicio"class="login-form" action="login.php" method="post">
+      <?php
+        if(isset($_GET)){
+          if($_GET['error']==1){
+            ?>
+            <p class="error">Usuario y/o contraseña incorrecto</p>
+            <?php
+          }
+        }
+      ?>
       <input type="text" id="usuario" name="usuario" placeholder="usuario"/>
       <input type="password" id="contrasena" name="contrasena" placeholder="contraseña"/>
       <button>acceder</button>

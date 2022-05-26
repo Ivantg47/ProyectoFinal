@@ -89,6 +89,12 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+.error {
+  color: #a94442;
+  /*background-color: #f2dede;*/
+  /*border-color: #ebccd1;*/
+  /*padding:1px 20px 1px 20px;*/
+}
 body {
   background: #1f2222; /* fallback for old browsers */
   background: rgb(31,34,34);

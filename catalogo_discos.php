@@ -13,19 +13,19 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 ?>
 	<table>
 		<tr>
+			<th>Portada</th>
 			<th>Titulo</th>
 			<th>Grupo</th>
-			<th>Portada</th>
 			<th>Edición</th>
 			<th>Borrado</th>
 		</tr>
 		<?php
 			while($row = pg_fetch_assoc($ejecucion)){
 				echo "<tr>";
-				echo "<td>".$row['titulo']."</td>";
-				echo "<td>".$row['nombre']."</td>";
 				echo "<td><img src=".pg_unescape_bytea($row['portada'])." width=100 heigth=100></td>";
 				//echo "<td><img src=img/darth.jpg width=100 heigth=100></td>";
+				echo "<td>".$row['titulo']."</td>";
+				echo "<td>".$row['nombre']."</td>";
 				echo "<td><a href='catalogo_discos _desc.php?titulo=".$row['titulo']."'>Editar</a></td>";
 				echo "<td><a href='formularioEl.php?id=".$row['id']."'>Borrar</a></td>";
 				echo "</tr>";
