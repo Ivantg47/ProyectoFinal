@@ -26,7 +26,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 				//echo "<td><img src=img/darth.jpg width=100 heigth=100></td>";
 				echo "<td>".$row['titulo']."</td>";
 				echo "<td>".$row['nombre']."</td>";
-				echo "<td><a href='catalogo_discos _desc.php?titulo=".$row['titulo']."'>Editar</a></td>";
+				echo "<td><a href='catalogo_discos_desc.php?titulo=".$row['titulo']."'>Editar</a></td>";
 				echo "<td><a href='formularioEl.php?id=".$row['id']."'>Borrar</a></td>";
 				echo "</tr>";
 			}
