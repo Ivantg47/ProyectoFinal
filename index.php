@@ -17,11 +17,13 @@
   <div class="form">
     <form id="formInicio" class="login-form" action="login.php" method="post">
       <?php
+
         if(isset($_GET)){
-          if($_GET['error']==1){
-            ?>
-            <p class="error">Usuario y/o contraseña incorrecto</p>
-            <?php
+
+          if(isset($_GET['error'])){
+            
+            echo "<p class=\"error\">Usuario y/o contraseña incorrecto</p>";
+            
           }
         }
       ?>
