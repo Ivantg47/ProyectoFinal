@@ -118,26 +118,17 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border: 1px solid #1AD2FB;
 }
-.form.alta label{
+/*.form.alta label{
   align-items: left;
   
   color: #ededf6;
   text-align: left;
   
-}
-.form.alta .label{
-  align-items: left;
-  padding: .375rem .75rem;
-  margin-bottom: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
+}*/
+.altaLabel{
+  margin-bottom: 0.5rem;
+  color: #ededf6;
+  text-align: left;
 }
 .form.alta h4{
   color: white;
@@ -155,12 +146,11 @@
   font-size: 14px;
 }
 .error {
-  color: #a94442;
+  color: #e61c1c;
   /*background-color: #f2dede;*/
   /*border-color: #ebccd1;*/
   /*padding:1px 20px 1px 20px;*/
 }
-
 .btn.btnAgregar{
   color: #ffffff;
   background-color: #17A9CA;
@@ -184,17 +174,17 @@
 }
 
 .icon {  
-  height: 10px;
-  width: 10px;
-  align-items: center;
-  float: center;
-  display: block;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
 }
-.icon.mas {
-  content: url("add.png");
+.icon-mas {
+  background-image: url("plus.svg");
+  fill: white;
 }
-.icon.menos {
-  content: url("cross.png");
+.icon-menos {
+  background-image: url("dash.svg");
 }
 body {
   background: #1f2222; /* fallback for old browsers */

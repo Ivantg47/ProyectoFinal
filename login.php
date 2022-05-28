@@ -13,9 +13,10 @@ $resultado = pg_query($con,$consulta);
 $resultado = pg_fetch_assoc($resultado);
 $miusuario = $resultado['usuario'];
 $micontrasena = substr($resultado['contrasena'], 2);
-$ded = ($micontrasena == $contrasena);
-echo $ded;
+#$ded = ($micontrasena == $contrasena);
+#echo $ded;
 
+pg_close($con);
 
 if ($usuario == $miusuario && $contrasena == $micontrasena) {
 	//echo "coincide";

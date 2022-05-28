@@ -6,32 +6,31 @@
 
 	<link rel="stylesheet" href="css/estilo1.css" type="text/css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link href="//netdna.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<script src="js/jquery-3.6.0.js"></script>
 	<script src="js/01.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/validar.js"></script>
 	
 	<?php include ('alta_consulta.php'); ?>
-	<title></title>
+	<title>Registro de discos</title>
 </head>
 <body>
-	<!--<div class="form">-->
-	<!--	<form name="subir" method="post" enctype="multipart/form-data" action="subir.php">-->
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
 			<h4 class="col-12">Alta discos</h4>
 
 			<div class="col-md-6">
-				<label for="portada" class="form-label">Portada:</label>
+				<label for="portada" class="altaLabel">Portada:</label>
 				<input type="file" class="form-control" name="portada">
 			</div>	
 
 			<div class="col-md-6">
-				<label for="titulo" class="form-label">Titulo:</label>	
-				<input type="text" class="form-control" name="titulo" placeholder="Titulo del disco">	
+				<label for="titulo" class="altaLabel">Titulo:</label>	
+				<input id="titulo" type="text" class="form-control" name="titulo" placeholder="Titulo del disco">	
 			</div>
 
 			<div class="col-md-4">
-				<label for="grupo" class="form-label">Grupo:</label>
+				<label for="grupo" class="altaLabel">Grupo:</label>
 				<select class="form-select" name="grupo" id="grupo">
 					<option value="" selected disabled hidden>&lt;Seleccione Grupo&gt;</option>
 					<?php
@@ -47,7 +46,7 @@
 			</div>	
 
 			<div class="col-md-4">
-				<label for="disquera" class="form-label">Disquera:</label>
+				<label for="disquera" class="altaLabel">Disquera:</label>
 				<select class="form-select" name="disquera" id="disquera">
 					<option value="" selected disabled hidden>&lt;Seleccione Disquera&gt;</option>
 					<?php
@@ -63,7 +62,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<label for="productor" class="form-label">Productor:</label>
+				<label for="productor" class="altaLabel">Productor:</label>
 				<select class="form-select" name="productor" id="productor">
 					<option value="" selected disabled hidden>&lt;Seleccione Productor&gt;</option>
 					<?php
@@ -79,18 +78,18 @@
 			</div>
 
 			<div class="col-md-4">	
-				<label for="genero" class="form-label">Genero:</label>
-				<input type="text" name="genero" class="form-control" placeholder="Genero del disco">
+				<label for="genero" class="altaLabel">Genero:</label>
+				<input id="genero" type="text" name="genero" class="form-control" placeholder="Genero del disco">
 			</div>
 
 			<div class="col-md-4">				
-				<label for="anio" class="form-label">Año:</label>
-				<input type="date" name="anio" class="form-control">
+				<label for="anio" class="altaLabel">Año:</label>
+				<input id="anio" type="date" name="anio" class="form-control">
 			</div>
 
 			<div class="col-md-4">	
-				<label for="costo" class="form-label">Costo:</label>
-				<input type="text" name="costo" class="form-control" placeholder="$ 000.00">
+				<label for="costo" class="altaLabel">Costo:</label>
+				<input id="costo" type="text" name="costo" class="form-control" placeholder="$ 0.00">
 			</div>
 		
 			<div class="form-group fieldGroup">
@@ -111,7 +110,7 @@
 							}
 						?>
 					</select>
-	            	<a href="javascript:void(0)" class="btn btnAgregar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>       
+	            	<a href="javascript:void(0)" class="btn btnAgregar"><span class="icon icon-mas" aria-hidden="true"></span></a>       
 		        </div>
 		    </div>
 			
@@ -147,7 +146,7 @@
 					}
 				?>
 			</select>
-			<a href="javascript:void(0)" class="btn btnQuitar"><span class="icon menos" aria-hidden="true"></span></a>
+			<a href="javascript:void(0)" class="btn btnQuitar"><span class="icon icon-menos" aria-hidden="true"></span></a>
 	    </div>
 	</div>
 </body>
