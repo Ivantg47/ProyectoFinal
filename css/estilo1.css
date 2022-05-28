@@ -16,7 +16,8 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border: 1px solid #1AD2FB;
 }
-.form input {
+
+.form .input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -89,11 +90,89 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+.form.alta{
+  position: relative;
+  z-index: 1;
+  background: #0E2F36;
+  max-width: 850px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border: 1px solid #1AD2FB;
+}
+.form.alta label{
+  align-items: left;
+  
+  color: #ededf6;
+  text-align: left;
+  
+}
+.form.alta .label{
+  align-items: left;
+  padding: .375rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+.form.alta h4{
+  color: white;
+}
+
+.form.alta .input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 40%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
 .error {
   color: #a94442;
   /*background-color: #f2dede;*/
   /*border-color: #ebccd1;*/
   /*padding:1px 20px 1px 20px;*/
+}
+.btn_remove{
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding:1px 20px 1px 20px;
+}
+
+.btn.btn-success{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn.btn-danger{
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.icon {  
+  height: 10px;
+  width: 10px;
+  align-items: center;
+  float: center;
+  display: block;
+}
+.icon.mas {
+  content: url("add.png");
+}
+.icon.menos {
+  content: url("cross.png");
 }
 body {
   background: #1f2222; /* fallback for old browsers */

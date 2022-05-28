@@ -6,8 +6,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 //Consultar los registros y mostrar los en una tabla
 	include 'conexion.php';
-	$titulo= $_GET['titulo'];
-	$query = "SELECT * FROM catalogo_cancion where titulo ='".$titulo."'";
+	$id= $_GET['id'];
+	$query = "SELECT * FROM catalogo_cancion where disco_id ='".$id."'";
 	$ejecucion = pg_query($con, $query);
 	$row = pg_fetch_assoc($ejecucion, 0);
 	//var_dump($ejecucion);

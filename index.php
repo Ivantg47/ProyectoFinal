@@ -15,7 +15,7 @@
 <body>
   <div class="login-page">
   <div class="form">
-    <form id="formInicio"class="login-form" action="login.php" method="post">
+    <form id="formInicio" class="login-form" action="login.php" method="post">
       <?php
         if(isset($_GET)){
           if($_GET['error']==1){
@@ -25,8 +25,8 @@
           }
         }
       ?>
-      <input type="text" id="usuario" name="usuario" placeholder="usuario"/>
-      <input type="password" id="contrasena" name="contrasena" placeholder="contraseña"/>
+      <input class="form input" type="text" id="usuario" name="usuario" placeholder="usuario"/>
+      <input class="form input" type="password" id="contrasena" name="contrasena" placeholder="contraseña"/>
       <button>acceder</button>
       <!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
     </form>
