@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="css/estilo1.css" type="text/css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<script src="js/jquery-3.6.0.js"></script>
 	<script src="js/01.js"></script>
 	
@@ -26,7 +27,7 @@
 
 			<div class="col-md-6">
 				<label for="titulo" class="form-label">Titulo:</label>	
-				<input type="text" class="form-control" name="titulo">	
+				<input type="text" class="form-control" name="titulo" placeholder="Titulo del disco">	
 			</div>
 
 			<div class="col-md-4">
@@ -64,7 +65,7 @@
 			<div class="col-md-4">
 				<label for="productor" class="form-label">Productor:</label>
 				<select class="form-select" name="productor" id="productor">
-					<option value="" selected disabled hidden>&lt;Seleccione Grupo&gt;</option>
+					<option value="" selected disabled hidden>&lt;Seleccione Productor&gt;</option>
 					<?php
 						while($Productor = pg_fetch_assoc($ProductorEje)){
 							$id = $Productor ['id'];
@@ -79,7 +80,7 @@
 
 			<div class="col-md-4">	
 				<label for="genero" class="form-label">Genero:</label>
-				<input type="text" name="genero" class="form-control">
+				<input type="text" name="genero" class="form-control" placeholder="Genero del disco">
 			</div>
 
 			<div class="col-md-4">				
@@ -89,7 +90,7 @@
 
 			<div class="col-md-4">	
 				<label for="costo" class="form-label">Costo:</label>
-				<input type="text" name="costo" class="form-control">
+				<input type="text" name="costo" class="form-control" placeholder="$ 000.00">
 			</div>
 		
 			<div class="form-group fieldGroup">
@@ -97,7 +98,7 @@
 				<h4 class="col-12">Canciones</h4>
 
     			<div class="input-group">	
-					<input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de cancion">
+					<input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de canción">
 					<select name="compositor[]" id="compositor" class="form-select">
 						<option value="" selected disabled hidden>&lt;Seleccione Compositor&gt;</option>
 						<?php
@@ -110,18 +111,26 @@
 							}
 						?>
 					</select>
-	            	<a href="javascript:void(0)" class="btn btn-success addMore"><span class="icon mas" aria-hidden="true"></span></a>       
+	            	<a href="javascript:void(0)" class="btn btnAgregar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>       
 		        </div>
 		    </div>
 			
-			<button>Registrar</button>
+			<div class="col-md-12">
+				
+			</div>
+			<div class="col-md-6">
+				<button>Registrar</button>
+			</div>
 
+			<div class="col-md-6">
+				<button class="form btnbutton">Salir</button>
+			</div>
 		</form>
 	</div>
 
 	<div class="form-group fieldGroupCopy" style="display: none;">
 	    <div class="input-group">
-	        <input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de cancion"/>
+	        <input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de canción"/>
 			<select name="compositor[]" id="compositor" class="form-select">
 				<option value="" selected disabled hidden>Seleccione Compositor</option>
 				<?php
@@ -138,7 +147,7 @@
 					}
 				?>
 			</select>
-			<a href="javascript:void(0)" class="btn btn-danger remove"><span class="icon menos" aria-hidden="true"></span></a>
+			<a href="javascript:void(0)" class="btn btnQuitar"><span class="icon menos" aria-hidden="true"></span></a>
 	    </div>
 	</div>
 </body>
