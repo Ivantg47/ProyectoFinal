@@ -22,7 +22,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 	</head>
 	<body>
 		<br>
-		<div class="card">
+		<div class="card text-white bg-dark">
 			<div class="card-header">
 				<h1>Catálogo de discos</h1>
 			</div>
