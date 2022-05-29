@@ -16,4 +16,6 @@ $Disquera = pg_fetch_assoc($DisqueraEje, 0);
 $consulta = "SELECT compositor_id id, nombre || ' ' || apellido nombre from compositores order by 2";
 $CompositorEje = pg_query($con,$consulta);
 $Compositor = pg_fetch_assoc($CompositorEje, 0);
+
+pg_close($con);
 ?>

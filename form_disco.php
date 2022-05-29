@@ -10,8 +10,9 @@
 	<script src="js/01.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/validar.js"></script>
-	
+	<script src="js/additional-methods.min.js"></script>
 	<?php include ('alta_consulta.php'); ?>
+
 	<title>Registro de discos</title>
 </head>
 <body>
@@ -21,7 +22,8 @@
 
 			<div class="col-md-6">
 				<label for="portada" class="altaLabel">Portada:</label>
-				<input type="file" class="form-control" name="portada">
+				<input type="file" class="form-control" name="portada" id="portada">
+				<div id="errores"></div>
 			</div>	
 
 			<div class="col-md-6">
@@ -91,8 +93,8 @@
 				<label for="costo" class="altaLabel">Costo:</label>
 				<input id="costo" type="text" name="costo" class="form-control" placeholder="$ 0.00">
 			</div>
-		
-			<div class="form-group fieldGroup">
+
+			<div class="form-group fieldGroup" id="divCancion">
 
 				<h4 class="col-12">Canciones</h4>
 
@@ -131,7 +133,7 @@
 	    <div class="input-group">
 	        <input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de canción"/>
 			<select name="compositor[]" id="compositor" class="form-select">
-				<option value="" selected disabled hidden>Seleccione Compositor</option>
+				<option value="" selected disabled hidden>&lt;Seleccione Compositor&gt;</option>
 				<?php
 					include ('conexion.php');
 					$consulta = "SELECT compositor_id id, nombre || ' ' || apellido nombre from compositores";

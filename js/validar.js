@@ -21,15 +21,27 @@ $(document).ready(function(){
 
 $(document).ready(function () {
 	jQuery.validator.addMethod("alphanumeric", function(value, element) {
-    return this.optional(element) || /^[\w.áéíóúñü]+$/i.test(value);
+    return this.optional(element) || /^[\w.áéíóúñü \s]+$/i.test(value);
 }, "Solo se aceptan letras y numeros");
 
-    $('#subir').validate({ 
-        rules: {
-            titulo: {
-                required: true,
-                alphanumeric: true
-            },
+	$.validator.addMethod('filesize', function(value, element, param) {
+   return this.optional(element) || (element.files[0].size <= param) 
+	}, "El archivo supera el límite de peso permitido");
+
+
+
+  $('#subir').validate({ 
+  	ignore: [],
+    rules: {
+    	portada: {
+        required: true,
+        filesize: 2000000,
+        extension: "png|jpeg|jpg"
+      },
+      titulo: {
+        required: true,
+        alphanumeric: true
+      },
 			grupo: {
 				required: true
 			},
@@ -51,15 +63,19 @@ $(document).ready(function () {
 				number: true,
 				min: 0 + Number.MIN_VALUE
 			},
-			tituloCancion: {
+			'tituloCancion[]': {
 				required: true,
 				alphanumeric: true
 			},
-			compositor: {
+			'compositor[]': {
 				required: true
 			}
-        },
-        messages: {
+    },
+    messages: {
+    	portada: {
+				required: "Es necesario llenar el campo",
+				extension: "Solo se permite la extencion png, jpg y jpeg"
+			},
 			titulo: {
 				required: "Es necesario llenar el campo"
 			},
@@ -83,13 +99,13 @@ $(document).ready(function () {
 				number: "Solo se aceptan numeros",
 				min: "Debe ingresar un valor mayor a 0.00"
 			},
-			tituloCancion: {
+			'tituloCancion[]': {
 				required: "Es necesario llenar el campo"
 			},
-			compositor: {
+			'compositor[]': {
 				required: "Es necesario llenar el campo"
 			}
 		}
-    });
-
+  });  
 });
+
