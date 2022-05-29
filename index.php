@@ -18,9 +18,9 @@
     <form id="formInicio" class="login-form" action="login.php" method="post">
       <?php
         if(isset($_GET)){
-          if($_GET['error']==1){
-            ?>
-            <p class="error">Usuario y/o contraseña incorrecto</p>
+          if(isset($_GET['error'])){
+            //Sugerencia para que no muestre la advertencia del index
+            echo "<p class=\"error\">Usuario y/o contraseña incorrecto</p>";
             <?php
           }
         }
