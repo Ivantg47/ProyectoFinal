@@ -39,13 +39,13 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 					<div class="card">
 						<h5 class="card-header">
 							<?php
-							echo "<td><img src=".pg_unescape_bytea($disco['titulo'])." width=100 heigth=100></td>";
+							echo "<h1>".$disco['titulo']."</h1>";
 							?>
 						</h5>
 						<div class="card-body">
 							<p class="card-text">
 								<?php
-									echo "<td><img src=".pg_unescape_bytea($disco['nombre'])." width=100 heigth=100></td>";
+									echo "<p>".$disco['nombre']."</p>";
 								?>
 							</p>
 						</div>
