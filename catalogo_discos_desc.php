@@ -36,7 +36,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 					</center>
 				</div>
 				<div class="col-md-8">
-					<div class="card">
+					<div class="card text-white bg-dark">
 						<h5 class="card-header">
 							<?php
 							echo "<h1>".$disco['titulo']."</h1>";
@@ -58,7 +58,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 		</div>
 	<br>
-			<div class="card">
+			<div class="card text-white bg-dark">
 				<div class="card-header">
 					<h1>Catálogo de discos</h1>
 				</div>
