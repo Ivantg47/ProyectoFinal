@@ -6,7 +6,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 //Consultar los registros y mostrar los en una tabla
 	include 'conexion.php';
-	$query = "SELECT d.disquera_id, d.nombre, g.pais FROM disquera d order by d.disquera_id";
+	$query = "SELECT d.disquera_id, d.nombre, d.pais FROM disquera d order by d.disquera_id";
 	$ejecucion = pg_query($con, $query);
 
 //	var_dump($ejecucion);
