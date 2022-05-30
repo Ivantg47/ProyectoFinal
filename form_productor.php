@@ -54,7 +54,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_productor.php">
 			<h4 class="col-12">Alta Productor</h4>
 
 			<div class="col-md-6">
@@ -64,7 +64,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 
       <div class="col-md-6">
         <label for="apellido" class="altaLabel">Apellido:</label> 
-        <input id="apellido" type="text" class="form-control" name="nombre" placeholder="Apellido/s del productor"> 
+        <input id="apellido" type="text" class="form-control" name="apellido" placeholder="Apellido/s del productor"> 
       </div>
 
       <div class="col-md-6">

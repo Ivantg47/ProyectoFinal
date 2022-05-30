@@ -1,7 +1,7 @@
 <?php
 include ('conexion.php');
 
-$consulta = "SELECT artista_id id, CASE WHEN nombre_artistico is NULL THEN 
+$consulta = "SELECT artista_id id, CASE WHEN nombre_artistico LIKE 'INDEFINIDO' THEN 
 				nombre || ' ' || apellido ELSE 
 				nombre_artistico || '(' || nombre || ' ' || apellido || ')'
 				END AS nombre

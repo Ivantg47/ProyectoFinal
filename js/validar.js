@@ -20,9 +20,13 @@ $(document).ready(function(){
 });
 
 $(document).ready(function () {
-	jQuery.validator.addMethod("alphanumeric", function(value, element) {
-    return this.optional(element) || /^[\w.áéíóúñü \s]+$/i.test(value);
+	$.validator.addMethod("alphanumeric", function(value, element) {
+    return this.optional(element) || /^[\w.áéíóúñü]+$/i.test(value);
 }, "Solo se aceptan letras y numeros");
+
+	$.validator.addMethod("letra", function(value, element) {
+    return this.optional(element) || /^[a-z.áéíóúñü\s]+$/i.test(value);
+	}, "Solo se aceptan letras");
 
 	$.validator.addMethod('filesize', function(value, element, param) {
    return this.optional(element) || (element.files[0].size <= param) 
@@ -69,6 +73,21 @@ $(document).ready(function () {
 			},
 			'compositor[]': {
 				required: true
+			},
+			nombre: {
+				required: true,
+				letra: true
+			},
+			apellido: {
+				required: true,
+				letra: true
+			},
+			pais: {
+				required: true,
+				letra: true
+			},
+			'artista[]': {
+				required: true
 			}
     },
     messages: {
@@ -103,6 +122,18 @@ $(document).ready(function () {
 				required: "Es necesario llenar el campo"
 			},
 			'compositor[]': {
+				required: "Es necesario llenar el campo"
+			},
+			nombre: {
+				required: "Es necesario llenar el campo"
+			},
+			apellido: {
+				required: "Es necesario llenar el campo"
+			},
+			pais: {
+				required: "Es necesario llenar el campo"
+			},
+			'artista[]': {
 				required: "Es necesario llenar el campo"
 			}
 		}

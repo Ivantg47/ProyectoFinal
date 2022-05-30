@@ -54,7 +54,7 @@
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_artista.php">
 			<h4 class="col-12">Alta Artista</h4>
 
       <div class="col-md-6">
@@ -64,12 +64,12 @@
 
       <div class="col-md-6">
         <label for="apellido" class="altaLabel">Apellido:</label> 
-        <input id="apellido" type="text" class="form-control" name="nombre" placeholder="Apellido/s del artista"> 
+        <input id="apellido" type="text" class="form-control" name="apellido" placeholder="Apellido/s del artista"> 
       </div>
       
       <div class="col-md-6">
         <label for="pais" class="altaLabel">Pais Origen:</label> 
-        <input id="pais" type="text" class="form-control" name="nombre" placeholder="Pais de origen"> 
+        <input id="pais" type="text" class="form-control" name="pais" placeholder="Pais de origen"> 
       </div>
 
       <div class="col-md-6">
@@ -77,9 +77,9 @@
         <input id="anio" type="date" class="form-control" name="anio" > 
       </div>
 			
-      <div class="col-md-8">
+      <div class="col-md-6">
         <label for="nombreArt" class="altaLabel">Nombre artistico:</label> 
-        <input id="nombreArt" type="text" class="form-control" name="nombre" placeholder="Nombre artistico"> 
+        <input id="nombreArt" type="text" class="form-control" name="nombreArt" placeholder="Nombre artistico"> 
       </div>
       <div class="col-md-12">
         
