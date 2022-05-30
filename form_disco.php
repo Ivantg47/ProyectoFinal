@@ -1,3 +1,9 @@
+<?php
+
+//verificar sesion
+session_start();
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+?>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +20,41 @@
 	<?php include ('alta_consulta.php'); ?>
 
 	<title>Registro de discos</title>
+
+	
 </head>
 <body>
+	<header class="encabezado">  
+	    <nav>
+	      <a class="nav-a logo" href="catalogo_discos.php"><img class="logo-img" src="logo.png" alt="discos"></a>
+	      <ul>
+	        <li class="menu"><a class="nav-li-link" href="catalogo_discos.php">Inicio</a></li>
+	        <li class="menu"><a href="#">Catalogo</a>
+	          <ul>
+	            <li><a href="catalogo_artistas.php">Artista</a></li>
+	            <li><a href="catalogo_compositores.php">Compositor</a></li>
+	            <li><a href="catalogo_discos.php">Disco</a></li>
+	            <li><a href="catalogo_disqueas.php">Disquera</a></li>
+	            <li><a href="catalogo_grupos.php">Grupo</a></li>
+	            <li><a href="catalogo_poductores.php">Productor</a></li>
+	          </ul>
+	        </li>
+	        <li class="menu"><a href="#">Registro</a>
+	          <ul>
+	            <li><a href="form_artista.php">Artista</a></li>
+	            <li><a href="form_compositor.php">Compositor</a></li>
+	            <li><a href="form_disco.php">Disco</a></li>
+	            <li><a href="form_disquera.php">Disquera</a></li>
+	            <li><a href="form_grupo.php">Grupo</a></li>
+	            <li><a href="form_productor.php">Productor</a></li>
+	          </ul>
+	        </li>
+	        <li class="menu"><a href="creditos.php">Creditos</a></li>
+	        <li class="menu"><a href="salir.php">Salir</a></li>
+	      </ul>
+	    </nav>
+  	</header>
+
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
 			<h4 class="col-12">Alta discos</h4>
@@ -124,7 +163,7 @@
 			</div>
 
 			<div class="col-md-6">
-				<button class="form btnbutton">Salir</button>
+				<button class="form btnbutton">Cancelar</button>
 			</div>
 		</form>
 	</div>
@@ -135,10 +174,6 @@
 			<select name="compositor[]" id="compositor" class="form-select">
 				<option value="" selected disabled hidden>&lt;Seleccione Compositor&gt;</option>
 				<?php
-					include ('conexion.php');
-					$consulta = "SELECT compositor_id id, nombre || ' ' || apellido nombre from compositores";
-					$ejecucion = pg_query($con,$consulta);
-					$row = pg_fetch_assoc($ejecucion, 0);
 					while($row = pg_fetch_assoc($ejecucion)){
 						$id = $row['id'];
 						$nombre = $row['nombre'];
@@ -153,4 +188,8 @@
 	</div>
 </body>
 </html>
-
+<?php }  	else {
+		header('Location: index.php?error=1');
+	
+	}
+?>

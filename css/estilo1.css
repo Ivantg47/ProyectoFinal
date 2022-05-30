@@ -187,10 +187,82 @@
   background-image: url("dash.svg");
 }
 body {
-  background: #1f2222; /* fallback for old browsers */
-  background: rgb(31,34,34);
-  background: linear-gradient(90deg, rgba(31,34,34,1) 0%, rgba(10,11,11,1) 50%);
+  background: #0f1111; /* fallback for old browsers */
+  background: rgb(15,17,17);
+  background-color: #0f1111;
+  /*background: linear-gradient(90deg, rgba(15,17,17,1) 0%, rgba(10,11,11,1) 50%);*/
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 90px;      
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.encabezado {
+  background-color: #0a0b0b; 
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.encabezado nav{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  max-width: 996;
+  margin: 0 auto;
+}
+.encabezado nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 100px;
+  overflow: hidden;
+}
+.encabezado nav ul li {
+  float: left;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 50px; 
+  border-radius: 3px;
+}
+.encabezado nav li:hover{
+  background: #3c3f3f;
+  transition: 0.5s;
+}
+.encabezado nav ul li ul{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: #0a0b0b;
+}
+.encabezado nav a{
+  color: #fff;
+  text-decoration: none;
+}
+.encabezado nav ul li ul{
+  display: none;
+}
+.encabezado nav ul li:hover > ul{
+  display: flex;
+}
+.menu{
+  padding: 0 40px;
+}
+.logo{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0 40px;
+  line-height: 40px;
+}
+.logo-img{
+  height: 50px;
+  width: 80px;
+  padding: 8px;
 }
