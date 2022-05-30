@@ -124,7 +124,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 			</div>
 
 			<div class="col-md-4">				
-				<label for="anio" class="altaLabel">Año:</label>
+				<label for="anio" class="altaLabel">Año Publicacion:</label>
 				<input id="anio" type="date" name="anio" class="form-control">
 			</div>
 

@@ -113,6 +113,7 @@
   background: #0E2F36;
   max-width: 850px;
   margin: 0 auto 100px;
+  margin-top: 50px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -190,11 +191,11 @@ body {
   background: #0f1111; /* fallback for old browsers */
   background: rgb(15,17,17);
   background-color: #0f1111;
-  /*background: linear-gradient(90deg, rgba(15,17,17,1) 0%, rgba(10,11,11,1) 50%);*/
+  background: linear-gradient(180deg, rgba(15,17,17,1) 0%, rgba(15,15,15,1) 50%);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 90px;      
+  padding-top: 60px;      
 }
 
 *{
@@ -214,7 +215,6 @@ body {
 .encabezado nav{
   display: flex;
   justify-content: space-between;
-  height: 50px;
   max-width: 996;
   margin: 0 auto;
 }
@@ -248,9 +248,18 @@ body {
 }
 .encabezado nav ul li ul{
   display: none;
+  padding: 0;
+  margin: 0;
 }
 .encabezado nav ul li:hover > ul{
   display: flex;
+}
+.encabezado nav ul li ul li{
+  float: left;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 50px; 
+  border-radius: 3px; 
 }
 .menu{
   padding: 0 40px;
@@ -265,4 +274,7 @@ body {
   height: 50px;
   width: 80px;
   padding: 8px;
+}
+.btMar{
+  margin-top: 60px;
 }

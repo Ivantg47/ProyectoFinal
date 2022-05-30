@@ -1,8 +1,8 @@
 <?php
-
+/*
 //verificar sesion
 session_start();
-if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 ?>	
 <!DOCTYPE html>
 <html>
@@ -57,12 +57,42 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
 			<h4 class="col-12">Alta Compositor</h4>
 
-			
+      <div class="col-md-6">
+        <label for="nombre" class="altaLabel">Nombre:</label> 
+        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre/s del compositor"> 
+      </div>
+
+      <div class="col-md-6">
+        <label for="apellido" class="altaLabel">Apellido:</label> 
+        <input id="apellido" type="text" class="form-control" name="nombre" placeholder="Apellido/s del compositor"> 
+      </div>
+      
+      <div class="col-md-6">
+        <label for="pais" class="altaLabel">Pais Origen:</label> 
+        <input id="pais" type="text" class="form-control" name="nombre" placeholder="Pais de origen"> 
+      </div>
+
+      <div class="col-md-6">
+        <label for="fechaNac" class="altaLabel">Fecha Nacimiento:</label> 
+        <input id="anio" type="date" class="form-control" name="anio" placeholder="dd/mm/aaaa"> 
+      </div>
+      
+      <div class="col-md-12">
+        
+      </div>
+      <div class="col-md-6">
+        <button>Registrar</button>
+      </div>
+
+      <div class="col-md-6">
+        <button class="form btnbutton">Cancelar</button>
+      </div>
+
 		</form>
 	</div>
 </body>
 </html>
-<?php }  	else {
+<?php /* }  	else {
 		header('Location: index.php?error=1');	
-	}
+	} */
 ?>

@@ -1,8 +1,9 @@
 <?php
-
+/*
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+  */
 ?>	
 <!DOCTYPE html>
 <html>
@@ -57,12 +58,75 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
 			<h4 class="col-12">Alta Grupo</h4>
 
-			
+			<div class="col-md-6">
+        <label for="nombre" class="altaLabel">Nombre:</label> 
+        <input id="titulo" type="text" class="form-control" name="titulo" placeholder="Nombre del grupo"> 
+      </div>
+
+      <div class="col-md-6">
+        <label for="pais" class="altaLabel">Pais Origen:</label> 
+        <input id="pais" type="text" class="form-control" name="nombre" placeholder="Pais de origen"> 
+      </div>
+      
+      <div class="form-group fieldGroup" id="divCancion">
+
+        <h4 class="col-12">Canciones</h4>
+
+          <div class="input-group"> 
+            <select name="artista[]" id="artista" class="form-select">
+              <option value="" selected disabled hidden>&lt;Seleccione Artista&gt;</option>
+              <?php
+                include ('conex_artista.php');
+                while($Artista = pg_fetch_assoc($ArtistaEje)){
+                  $id = $Artista ['id'];
+                  $nombre = $Artista ['nombre'];
+              ?>
+              <option value="<?php echo $id; ?>"><?php echo $nombre; ?></option>
+              <?php 
+                }
+              ?>
+            </select>
+            <a href="javascript:void(0)" class="btn btnAgregar"><span class="icon icon-mas" aria-hidden="true"></span></a>       
+          </div>
+      </div>
+
+      <div class="col-md-12">
+        
+      </div>
+      <div class="col-md-6">
+        <button class="btMar">Registrar</button>
+      </div>
+
+      <div class="col-md-6">
+        <button class="form btnbutton btMar">Cancelar</button>
+      </div>
 		</form>
 	</div>
+
+  <div class="form-group fieldGroupCopy" style="display: none;">
+    <div class="input-group">
+      <select name="artista[]" id="artista" class="form-select">
+        <option value="" selected disabled hidden>&lt;Seleccione Artista&gt;</option>
+        <?php
+          include ('conex_artista.php');
+          while($Artista = pg_fetch_assoc($ArtistaEje)){
+            $id = $Artista ['id'];
+            $nombre = $Artista ['nombre'];
+        ?>
+        <option value="<?php echo $id; ?>"><?php echo $nombre; ?></option>
+        <?php 
+          }
+        ?>
+      </select>
+      <a href="javascript:void(0)" class="btn btnQuitar"><span class="icon icon-menos" aria-hidden="true"></span></a>
+    </div>
+  </div>
 </body>
 </html>
-<?php }  	else {
+<?php 
+/*
+}  	else {
 		header('Location: index.php?error=1');	
 	}
+  */
 ?>
