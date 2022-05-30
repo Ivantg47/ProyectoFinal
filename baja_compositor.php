@@ -3,6 +3,12 @@
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
+  include 'conexion.php';
+  $id = $_GET['id'];
+  $consulta = "SELECT compositor_id id, nombre, apellido, pais_nacimiento pais, fecha_nacimiento anio from compositores where compositor_id=".$id;
+  $resultado = pg_query($con,$consulta);
+  $compositor = pg_fetch_assoc($resultado, 0);
+  pg_close($con);
 ?>	
 <!DOCTYPE html>
 <html>
@@ -17,7 +23,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/validar.js"></script>
 
-	<title>Registro de Compositor</title>
+	<title>Baja de Compositor</title>
 
 	
 </head>
@@ -55,33 +61,35 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
-			<h4 class="col-12">Alta Compositor</h4>
+			<h4 class="col-12">Baja Compositor</h4>
+
+      <input id="id_compositor" type="text" name="id" value="<?php echo $compositor['id']; ?>" style="display: none" > 
 
       <div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
-        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre/s del compositor"> 
+        <input id="nombre" type="text" class="form-control" name="nombre" value="<?php echo $compositor['nombre']; ?>"> 
       </div>
 
       <div class="col-md-6">
         <label for="apellido" class="altaLabel">Apellido:</label> 
-        <input id="apellido" type="text" class="form-control" name="apellido" placeholder="Apellido/s del compositor"> 
+        <input id="apellido" type="text" class="form-control" name="apellido" value="<?php echo $compositor['apellido']; ?>"> 
       </div>
       
       <div class="col-md-6">
         <label for="pais" class="altaLabel">Pais Origen:</label> 
-        <input id="pais" type="text" class="form-control" name="pais" placeholder="Pais de origen"> 
+        <input id="pais" type="text" class="form-control" name="pais" value="<?php echo $compositor['pais']; ?>"> 
       </div>
 
       <div class="col-md-6">
         <label for="fechaNac" class="altaLabel">Fecha Nacimiento:</label> 
-        <input id="anio" type="date" class="form-control" name="anio" placeholder="dd/mm/aaaa"> 
+        <input id="anio" type="date" class="form-control" name="anio" value="<?php echo $compositor['anio']; ?>"> 
       </div>
       
       <div class="col-md-12">
         
       </div>
       <div class="col-md-6">
-        <button>Registrar</button>
+        <button>Eliminar</button>
       </div>
 
       <div class="col-md-6">

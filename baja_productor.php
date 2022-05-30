@@ -3,6 +3,12 @@
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
+  include 'conexion.php';
+  $id = $_GET['id'];
+  $consulta = "SELECT productor_id id, nombre, apellido, fecha_nacimiento anio from productores where productor_id=".$id;
+  $resultado = pg_query($con,$consulta);
+  $productor = pg_fetch_assoc($resultado, 0);
+  pg_close($con);
 ?>	
 <!DOCTYPE html>
 <html>
@@ -17,7 +23,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/validar.js"></script>
 
-	<title>Registro de Compositor</title>
+	<title>Baja de Productor</title>
 
 	
 </head>
@@ -25,8 +31,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 	<header class="encabezado">  
     <nav>
       <a class="nav-a logo" href="catalogo_discos.php"><img class="logo-img" src="logo.png" alt="discos"></a>
-        <ul>
-          <li class="menu"><a class="nav-li-link" href="catalogo_discos.php">Inicio</a></li>
+	      <ul>
+	        <li class="menu"><a class="nav-li-link" href="catalogo_discos.php">Inicio</a></li>
         <li class="menu"><a href="#">Catalogo</a>
           <ul>
             <li><a href="catalogo_artistas.php">Artista</a></li>
@@ -54,45 +60,42 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
-			<h4 class="col-12">Alta Compositor</h4>
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_productor.php">
 
-      <div class="col-md-6">
+			<h4 class="col-12">Baja Productor</h4>
+
+      <input id="id_productor" type="text" name="id" value="<?php echo $productor['id']; ?>" style="display: none" > 
+
+			<div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
-        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre/s del compositor"> 
+        <input id="nombre" type="text" class="form-control" name="nombre" value="<?php echo $productor['nombre']; ?>"> 
       </div>
 
       <div class="col-md-6">
         <label for="apellido" class="altaLabel">Apellido:</label> 
-        <input id="apellido" type="text" class="form-control" name="apellido" placeholder="Apellido/s del compositor"> 
-      </div>
-      
-      <div class="col-md-6">
-        <label for="pais" class="altaLabel">Pais Origen:</label> 
-        <input id="pais" type="text" class="form-control" name="pais" placeholder="Pais de origen"> 
+        <input id="apellido" type="text" class="form-control" name="apellido" value="<?php echo $productor['apellido']; ?>"> 
       </div>
 
       <div class="col-md-6">
         <label for="fechaNac" class="altaLabel">Fecha Nacimiento:</label> 
-        <input id="anio" type="date" class="form-control" name="anio" placeholder="dd/mm/aaaa"> 
+        <input id="anio" type="date" class="form-control" name="anio" value="<?php echo $productor['anio']; ?>"> 
       </div>
       
       <div class="col-md-12">
         
       </div>
       <div class="col-md-6">
-        <button>Registrar</button>
+        <button class="btMar">Eliminar</button>
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton">Cancelar</button>
+        <button class="form btnbutton btMar">Cancelar</button>
       </div>
-
 		</form>
 	</div>
 </body>
 </html>
-<?php /* }  	else {
+<?php /*}  	else {
 		header('Location: index.php?error=1');	
-	} */
+	}*/
 ?>

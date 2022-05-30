@@ -1,8 +1,15 @@
 <?php
-/*
+
 //verificar sesion
-session_start();
-if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
+#session_start();
+#if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+
+  include 'conexion.php';
+  $id = $_GET['id'];
+  $consulta = "SELECT artista_id id, nombre, apellido, pais_nacimiento pais, fecha_nacimiento anio, nombre_artistico from artistas where artista_id=".$id;
+  $resultado = pg_query($con,$consulta);
+  $artista = pg_fetch_assoc($resultado, 0);
+  pg_close($con);
 ?>	
 <!DOCTYPE html>
 <html>
@@ -16,8 +23,9 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 	<script src="js/01.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/validar.js"></script>
+  <?php include ('consulta_artista.php'); ?>
 
-	<title>Registro de Compositor</title>
+	<title>Baja de Artista</title>
 
 	
 </head>
@@ -54,45 +62,54 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
-			<h4 class="col-12">Alta Compositor</h4>
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="eliminar_artista.php">
+
+			<h4 class="col-12">Baja Artista</h4>
+
+      <input id="id_artista" type="text" name="id" value="<?php echo $artista['id']; ?>" style="display: none" > 
 
       <div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
-        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre/s del compositor"> 
+        <input id="nombre" type="text" class="form-control" name="nombre" value="<?php echo $artista['nombre']; ?>"> 
       </div>
 
       <div class="col-md-6">
         <label for="apellido" class="altaLabel">Apellido:</label> 
-        <input id="apellido" type="text" class="form-control" name="apellido" placeholder="Apellido/s del compositor"> 
+        <input id="apellido" type="text" class="form-control" name="apellido" value="<?php echo $artista['apellido']; ?>"> 
       </div>
       
       <div class="col-md-6">
         <label for="pais" class="altaLabel">Pais Origen:</label> 
-        <input id="pais" type="text" class="form-control" name="pais" placeholder="Pais de origen"> 
+        <input id="pais" type="text" class="form-control" name="pais" value="<?php echo $artista['pais']; ?>"> 
       </div>
 
       <div class="col-md-6">
         <label for="fechaNac" class="altaLabel">Fecha Nacimiento:</label> 
-        <input id="anio" type="date" class="form-control" name="anio" placeholder="dd/mm/aaaa"> 
+        <input id="anio" type="date" class="form-control" name="anio" value="<?php echo $artista['anio']; ?>"> 
       </div>
-      
+			
+      <div class="col-md-6">
+        <label for="nombreArt" class="altaLabel">Nombre artistico:</label> 
+        <input id="nombreArt" type="text" class="form-control" name="nombreArt" value="<?php echo $artista['nombre_artistico']; ?>"> 
+      </div>
       <div class="col-md-12">
         
       </div>
       <div class="col-md-6">
-        <button>Registrar</button>
+        <button id="eliminar" class="btMar">Eliminar</button>
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton">Cancelar</button>
+        <button class="form btnbutton btMar">Cancelar</button>
       </div>
-
+      
 		</form>
 	</div>
 </body>
 </html>
-<?php /* }  	else {
+
+<?php
+/* }  	else {
 		header('Location: index.php?error=1');	
-	} */
+	}*/
 ?>
