@@ -6,7 +6,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 //Consultar los registros y mostrar los en una tabla
 	include 'conexion.php';
-	$query = "SELECT d.disco_id, d.titulo, g.nombre, d.portada FROM discos d inner join grupos g on d.grupo_id = g.grupo_id order by d.disco_id";
+	$query = "SELECT p.productor_id, p.nombre, p.apellido, p.fecha_nacimiento FROM productores p order by p.productor_id";
 	$ejecucion = pg_query($con, $query);
 
 //	var_dump($ejecucion);
@@ -52,7 +52,39 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 			      </ul>
 			    </nav>
 			</header>
-
+			<br>
+			<div class="card text-white bg-dark">
+			<div class="card-header">
+				<h1>Catálogo de productores</h1>
+			</div>
+			<div class="card-body">
+				<table class="table">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nombre</th>
+						<th scope="col">Fecha de Nacimiento</th>
+						<th scope="col">Editar</th>
+                        <th scope="col">Borrar</th>
+					</tr>
+					<?php
+						$nombre = $row['nombre']." ".$row['apellido'];
+						while($row = pg_fetch_assoc($ejecucion)){
+							echo "<tr>";
+							echo "<td>".$row['productor_id']."</td>";
+							echo "<td>".$nombre."</td>";
+							echo "<td>".$row['fecha_nacimiento']."</td>";
+							echo "<td><a class=\"btn btn-outline-secondary\" href='catalogo_discos_desc.php?id=".$row['grupo_id']."'>Editar</a></td>";
+							echo "<td><a class=\"btn btn-outline-danger\" href='formularioEl.php?id=".$row['grupo_id']."'>Borrar</a></td>";
+							echo "</tr>";
+						}
+					?>	
+				</table>
+			</div>
+		</div>
+		<br>
+		<center>
+			<input class="btn btn-danger" type="submit" onclick="location='salir.php'" value="Salir">
+		</center>
 		</body>
 	</html>
 

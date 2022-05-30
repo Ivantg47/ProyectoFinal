@@ -78,7 +78,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 						<div class="card-body">
 							<p class="card-text">
 								<?php
-									echo "<p>".r$ow['grupo']."</p>";
+									echo "<p>".$row['grupo']."</p>";
 								?>
 							</p>
 						</div>
