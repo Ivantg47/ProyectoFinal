@@ -1,3 +1,4 @@
+// Sirve para dar de baja de la bd los discos registrados
 <?php
 
 //verificar sesion

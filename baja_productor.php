@@ -1,3 +1,4 @@
+//Sirve para dar de baja a los productores registrados
 <?php
 /*
 //verificar sesion
