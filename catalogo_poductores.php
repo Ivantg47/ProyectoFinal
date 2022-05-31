@@ -69,8 +69,9 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
                         <th scope="col">Borrar</th>
 					</tr>
 					<?php
-						$nombre = $row['nombre']." ".$row['apellido'];
+						
 						while($row = pg_fetch_assoc($ejecucion)){
+							$nombre = $row['nombre']." ".$row['apellido'];
 							echo "<tr>";
 							echo "<td>".$row['productor_id']."</td>";
 							echo "<td>".$nombre."</td>";

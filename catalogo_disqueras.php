@@ -8,7 +8,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 //Consultar los registros y mostrar los en una tabla
 	include 'conexion.php';
-	$query = "SELECT d.disquera_id, d.nombre, g.pais FROM disqueras d order by d.disquera_id";
+	$query = "SELECT disquera_id, nombre, pais FROM disqueras  order by disquera_id";
 	$ejecucion = pg_query($con, $query);
 
 //	var_dump($ejecucion);
@@ -19,7 +19,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/estilo1.css" type="text/css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<title>Catalogo de Disqueras</title>
 	</head>
 	<body>
