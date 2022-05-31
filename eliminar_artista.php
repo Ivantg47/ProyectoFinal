@@ -1,20 +1,27 @@
 <?php
+session_start();
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 include ('conexion.php');
 
 $id = $_POST["id"];
-$consulta = "DELETE FROM grupos artistas WHERE artista_id=".$id;
-$insercion= pg_query($con,$consulta);
-$query = pg_query($con, $insercion);
+$consulta = "DELETE FROM artistas WHERE artista_id=".$id." on cascade";
+#var_dump($consulta);
+$query = pg_query($con, $consulta);
 //var_dump($query);
 
 if($query){
-	echo "El registro a sido eliminado de la base de datos";
-	echo "<a href='consulta.php'>Regresar a la lista de usuarios</a>";
+	pg_close($con);
+	echo'<script type="text/javascript">
+        alert("Registro eliminado con exito");
+        window.location.href="catalogo_artistas.php";
+        </script>';
+#	header('Location: catalogo_artistas.php');
 }else{
-	echo "Error en intento de eliminar el registro";
-	echo "<a href='consulta.php'>Regresar a la lista de usuarios</a>";
+	pg_close($con);
+	echo'<script type="text/javascript">
+        alert("Error en intento de eliminar el registro");
+        window.location.href="baja_artista.php?id='.$id.'";
+        </script>';
 }
-
-pg_close($con);
-
+}
 ?>

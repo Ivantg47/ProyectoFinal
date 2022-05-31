@@ -89,7 +89,7 @@
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton">Cancelar</button>
+        <button class="form btnbutton" onclick="window.location='catalogo_artistas.php';return false;">Cancelar</button>
       </div>
       
 		</form>
