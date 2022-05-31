@@ -7,7 +7,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 include ('conexion.php');
 
 $id = $_POST["id"];
-$consulta = "DELETE FROM artistas WHERE artista_id=".$id." on cascade";
+$consulta = "DELETE FROM artistas WHERE artista_id=".$id;
 #var_dump($consulta);
 $query = pg_query($con, $consulta);
 //var_dump($query);
@@ -26,9 +26,8 @@ if($query){
         window.location.href="baja_artista.php?id='.$id.'";
         </script>';
 }
-}
-
 
 pg_close($con);
 
+}
 ?>

@@ -63,11 +63,11 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" action="eliminar_artista.php">
+		<form name="subir" id="subir" class="row g-3" method="post" action="elimina_artista.php">
 
 			<h4 class="col-12">Baja Artista</h4>
 
-      <input id="doc" type="text" name="doc" value="eliminar_artista.php" style="display: none" > 
+      <input id="doc" type="text" name="doc" value="elimina_artista.php" style="display: none" > 
       <input id="id" type="text" name="id" value="<?php echo $artista['id']; ?>" style="display: none" > 
 
       <div class="col-md-6">
