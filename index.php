@@ -1,9 +1,10 @@
-// index.php: Aqui se muestra el un formulario para indicar el nombre de usuario y contraseña para ingresar al sistema
-// Los datos de usuario y contraseña que se ingresen en esta parte serán mandados a login.php
-// Si los datos son correctos y coinciden con los que son almacenados en la bd se redirige a catalogo_discos.php, en caso contrario, regresa a index.php.
+
 
 <!DOCTYPE html>
 <html>
+  <!-- index.php: Aqui se muestra el un formulario para indicar el nombre de usuario y contraseña para ingresar al sistema -->
+  <!-- Los datos de usuario y contraseña que se ingresen en esta parte serán mandados a login.php -->
+  <!-- Si los datos son correctos y coinciden con los que son almacenados en la bd se redirige a catalogo_discos.php, en caso contrario, regresa a index.php. -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> // Esta línea nos permite que el área que es visible para el usuario en la pantalla se ajuste al dispositivo que utiliza.
