@@ -8,7 +8,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 //Consultar los registros y mostrar los en una tabla
 	include 'conexion.php';
-	$query = "SELECT a.artista_id, a.nombre, a.apellido, a.pais_nacimiento, a.fecha_nacimiento, a.nombre_artistico FROM artistas a order by a.artista_id";
+	$query = "SELECT a.artista_id, a.nombre, a.apellido, a.pais_nacimiento pais, a.fecha_nacimiento anio, a.nombre_artistico FROM artistas a order by a.artista_id";
 	$ejecucion = pg_query($con, $query);
 
 //	var_dump($ejecucion);
@@ -34,7 +34,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 		            <li><a href="catalogo_artistas.php">Artista</a></li>
 		            <li><a href="catalogo_compositores.php">Compositor</a></li>
 		            <li><a href="catalogo_discos.php">Disco</a></li>
-		            <li><a href="catalogo_disqueas.php">Disquera</a></li>
+		            <li><a href="catalogo_disqueras.php">Disquera</a></li>
 		            <li><a href="catalogo_grupos.php">Grupo</a></li>
 		            <li><a href="catalogo_poductores.php">Productor</a></li>
 		          </ul>
@@ -65,20 +65,21 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 						<th scope="col">#</th>
 						<th scope="col">Nombre</th>
 						<th scope="col">País</th>
-                        			<th scope="col">Fecha de Nacimiento</th>
-                        			<th scope="col">Nombre Artístico</th>
-                        			<th scope="col">Editar</th>
-                        			<th scope="col">Borrar</th>
+                        <th scope="col">Fecha de Nacimiento</th>
+                        <th scope="col">Nombre Artístico</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Borrar</th>
 					</tr>
 					<?php
-                        $nombre = $row['nombre'] . " " . $row['apellido'];
+                        
 						while($row = pg_fetch_assoc($ejecucion)){
+							$nombre = $row['nombre'] . ' ' . $row['apellido'];
 							echo "<tr>";
 							echo "<td>".$row['disquera_id']."</td>";
 							echo "<td>".$nombre."</td>";
 							echo "<td>".$row['pais']."</td>";
-                            				echo "<td>".$row['fecha_nacimento']."</td>";
-                            				echo "<td>".$row['nombre_artistico']."</td>";
+            				echo "<td>".$row['anio']."</td>";
+            				echo "<td>".$row['nombre_artistico']."</td>";
 							echo "<td><a class=\"btn btn-outline-secondary\" href='edita_artista.php?id=".$row['artista_id']."'>Editar</a></td>";
 							echo "<td><a class=\"btn btn-outline-danger\" href='baja_artista.php?id=".$row['artista_id']."'>Borrar</a></td>";
 							echo "</tr>";
