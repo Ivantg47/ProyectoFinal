@@ -1,4 +1,6 @@
 <?php
+//Establece la conexión con la base de datos
+
 include ('conexion.php');
 
 $consulta = "SELECT artista_id id, CASE WHEN nombre_artistico LIKE 'INDEFINIDO' THEN 

@@ -1,5 +1,7 @@
 <?php
-
+//Muestra una lista de todos los grupos registrados y da la opcion de eliminación o modificación
+//
+//
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
