@@ -1,3 +1,5 @@
+//Sirve para realizar consultas
+
 <?php
 include ('conexion.php');
 

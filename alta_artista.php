@@ -1,3 +1,5 @@
+//Aquí se dan de alta a los nuevos artistas en la base de datos. Se validan los datos ingresados y se insertan en la bd.
+
 <?php
 #session_start();
 #if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
@@ -17,7 +19,8 @@
     echo $pais.'</br>';
     echo $nombreArt.'</br>';
     echo $anio.'</br>';
-*/
+ */
+
     if (!preg_match('/[a-z áéíóúñü\s]+$/i', $nombre)) {
 #        echo "no es alfanumerico titulo<br/>";
         pg_close($con);
