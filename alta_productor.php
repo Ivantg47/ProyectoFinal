@@ -1,8 +1,8 @@
 <?php
 //Sirve para dar de alta a los productores
 
-#session_start();
-#if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+session_start();
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
     include 'conexion.php';
 
@@ -38,14 +38,18 @@
         echo $insercion.'<br/>';
         $query = pg_query($con, $insercion);
 
+        pg_close($con);
+        echo'<script type="text/javascript">
+        alert("Productor registrada con exito");
+        window.location.href="catalogo_productores.php";
+        </script>';
+
     } else {
 #        echo "ya se encuentra registrado el disco<br/>";
         pg_close($con);
         header('Location: form_disquera.php?error=3');
     }
 
-    pg_close($con);
-    header('Location: catalogo_productores.php');
-#}
+}
    
 ?>

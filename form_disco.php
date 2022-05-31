@@ -1,16 +1,15 @@
+<?php
 //form_disco.php: Formato para registrar discos.
 
-<?php
-
 //verificar sesion
-#session_start();
-#if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+session_start();
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 ?>	
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"> // Esta línea nos permite que el área que es visible para el usuario en la pantalla se ajuste al dispositivo que utiliza.
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!--// Esta línea nos permite que el área que es visible para el usuario en la pantalla se ajuste al dispositivo que utiliza.-->
 
 	<link rel="stylesheet" href="css/estilo1.css" type="text/css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -59,7 +58,7 @@
 <main>
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
-			<h4 class="col-12">Alta discos</h4> // En esta sección se da de alta discos y se piden los datos necesarios.
+			<h4 class="col-12">Alta discos</h4> <!--// En esta sección se da de alta discos y se piden los datos necesarios.-->
 
 			<div class="col-md-6">
 				<label for="portada" class="altaLabel">Portada:</label>
@@ -71,7 +70,7 @@
 				<label for="titulo" class="altaLabel">Titulo:</label>	
 				<input id="titulo" type="text" class="form-control" name="titulo" placeholder="Titulo del disco">	
 			</div>
-			// sección para seleccionar el grupo al que le pertenece el disco.
+			<!--// sección para seleccionar el grupo al que le pertenece el disco.-->
 			<div class="col-md-4">
 				<label for="grupo" class="altaLabel">Grupo:</label>
 				<select class="form-select" name="grupo" id="grupo">
@@ -87,7 +86,7 @@
 					?>
 				</select>				
 			</div>	
-			// Sección para seleccionar la disquera del disco.
+			<!--// Sección para seleccionar la disquera del disco.-->
 			<div class="col-md-4">
 				<label for="disquera" class="altaLabel">Disquera:</label>
 				<select class="form-select" name="disquera" id="disquera">
@@ -103,7 +102,7 @@
 					?>
 				</select>
 			</div>
-			// Sección para seleccionar el productor del disco.
+			<!--// Sección para seleccionar el productor del disco.-->
 			<div class="col-md-4">
 				<label for="productor" class="altaLabel">Productor:</label>
 				<select class="form-select" name="productor" id="productor">
@@ -137,7 +136,7 @@
 
 			<div class="form-group fieldGroup" id="divCancion">
 
-				<h4 class="col-12">Canciones</h4> // seccion para las canciones
+				<h4 class="col-12">Canciones</h4> <!--// seccion para las canciones-->
 
     			<div class="input-group">	
 					<input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de canción">
@@ -161,11 +160,11 @@
 				
 			</div>
 			<div class="col-md-6">
-				<button>Registrar</button> // se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_discos.php).
+				<button>Registrar</button> <!--// se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_discos.php).-->
 			</div>
 
 			<div class="col-md-6">
-				<button class="form btnbutton">Cancelar</button> // se hace uso de un botón para cancelar el registro de productores.
+				<button class="form btnbutton" onclick="window.location='catalogo_discos.php';return false;">Cancelar</button> <!--// se hace uso de un botón para cancelar el registro de productores.-->
 			</div>
 		</form>
 	</div>
@@ -190,8 +189,8 @@
 	</div>
 </body>
 </html>
-<?php /*}  	else {
+<?php }  	else {
 		header('Location: index.php?error=1');
 	
-	}*/
+	}
 ?>

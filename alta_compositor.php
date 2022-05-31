@@ -51,7 +51,10 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
         $query = pg_query($con, $insercion);
 
         pg_close($con);
-        header('Location: catalogo_compositores.php');
+        echo'<script type="text/javascript">
+        alert("Compositor registrado con exito");
+        window.location.href="catalogo_compositores.php";
+        </script>';
 
     } else {
         echo "ya se encuentra registrado el disco<br/>";

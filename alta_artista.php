@@ -58,14 +58,17 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 #        echo $insercion.'<br/>';
         $query = pg_query($con, $insercion);
 
+        pg_close($con);
+        echo'<script type="text/javascript">
+        alert("Artista registrado con exito");
+        window.location.href="catalogo_artistas.php";
+        </script>';
+
     } else {
 #        echo "ya se encuentra registrado el disco<br/>";
         pg_close($con);
        header('Location: form_artista.php?error=5');
     }
-
-    pg_close($con);
-    header('Location: catalogo_artista.php');
     
 }
    

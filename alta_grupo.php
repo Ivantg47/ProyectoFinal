@@ -64,7 +64,10 @@
             header('Location: form_disco.php?error=3');
         }
         pg_close($con);
-        header('Location: catalogo_productores.php');
+        echo'<script type="text/javascript">
+        alert("Grupo registrada con exito");
+        window.location.href="catalogo_grupos.php";
+        </script>';
 
     } else {
 #        echo "ya se encuentra registrado el grupo<br/>";

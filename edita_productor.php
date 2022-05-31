@@ -1,8 +1,8 @@
 <?php
-/*
+
 //verificar sesion
 session_start();
-if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
   include 'conexion.php';
   $id = $_GET['id'];
   $consulta = "SELECT productor_id id, nombre, apellido, fecha_nacimiento anio from productores where productor_id=".$id;
@@ -60,7 +60,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_productor.php">
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="edicion_productor.php">
 
 			<h4 class="col-12">Edita Productor</h4>
 
@@ -85,17 +85,17 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
         
       </div>
       <div class="col-md-6">
-        <button class="btMar">Guardar</button>
+        <button id="guardar" class="btMar">Guardar</button>
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton btMar">Cancelar</button>
+        <button class="form btnbutton btMar" onclick="window.location='catalogo_poductores.php';return false;">Cancelar</button>
       </div>
 		</form>
 	</div>
 </body>
 </html>
-<?php /*}  	else {
+<?php }  	else {
 		header('Location: index.php?error=1');	
-	}*/
+	}
 ?>

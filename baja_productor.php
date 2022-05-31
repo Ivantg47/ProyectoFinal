@@ -1,10 +1,10 @@
 <?php
 //Sirve para dar de baja a los productores registrados
 
-/*
+
 //verificar sesion
 session_start();
-if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ 
   include 'conexion.php';
   $id = $_GET['id'];
   $consulta = "SELECT productor_id id, nombre, apellido, fecha_nacimiento anio from productores where productor_id=".$id;
@@ -62,11 +62,11 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_productor.php">
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="elimina_productor.php">
 
 			<h4 class="col-12">Baja Productor</h4>
 
-      <input id="id_productor" type="text" name="id" value="<?php echo $productor['id']; ?>" style="display: none" > 
+      <input id="id" type="text" name="id" value="<?php echo $productor['id']; ?>" style="display: none" > 
 
 			<div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
@@ -87,17 +87,17 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
         
       </div>
       <div class="col-md-6">
-        <button class="btMar">Eliminar</button>
+        <button id="eliminar" class="btMar">Eliminar</button>
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton btMar">Cancelar</button>
+        <button class="form btnbutton btMar onclick="window.location='catalogo_poductores.php';return false;">Cancelar</button>
       </div>
 		</form>
 	</div>
 </body>
 </html>
-<?php /*}  	else {
+<?php }  	else {
 		header('Location: index.php?error=1');	
-	}*/
+	}
 ?>

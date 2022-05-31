@@ -1,11 +1,11 @@
-//form_grupo.php: Formato para registrar un grupo.
+
 
 <?php
-/*
+//form_grupo.php: Formato para registrar un grupo.
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
-  */
+
 ?>	
 <!DOCTYPE html>
 <html>
@@ -58,7 +58,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_grupo.php">
-			<h4 class="col-12">Alta Grupo</h4> //En esta sección se da de alta a los grupos y se piden los datos necesarios.
+			<h4 class="col-12">Alta Grupo</h4> <!--//En esta sección se da de alta a los grupos y se piden los datos necesarios.-->
 
 			<div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
@@ -74,7 +74,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
         <h4 class="col-12">Canciones</h4>
 
-	   // Esta parte se utiliza para que se pueda agregar el artista correspondiente al grupo que se esta registrando.
+	   <!--// Esta parte se utiliza para que se pueda agregar el artista correspondiente al grupo que se esta registrando.-->
 	      
           <div class="input-group"> 
             <select name="artista[]" id="artista" class="form-select">
@@ -98,11 +98,11 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
         
       </div>
       <div class="col-md-6">
-        <button class="btMar">Registrar</button> // se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_grupo.php).
+        <button class="btMar">Registrar</button> <!--// se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_grupo.php).-->
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton btMar">Cancelar</button> // se hace uso de un botón para cancelar el registro de productores.
+        <button class="form btnbutton btMar" onclick="window.location='catalogo_discos.php';return false;">Cancelar</button> <!--// se hace uso de un botón para cancelar el registro de productores.-->
       </div>
 		</form>
 	</div>

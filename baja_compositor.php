@@ -93,7 +93,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
         
       </div>
       <div class="col-md-6">
-        <button>Eliminar</button>
+        <button id="eliminar">Eliminar</button>
       </div>
 
       <div class="col-md-6">

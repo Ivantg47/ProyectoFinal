@@ -36,14 +36,18 @@
 #        echo $insercion.'<br/>';
         $query = pg_query($con, $insercion);
 
+        pg_close($con);
+        echo'<script type="text/javascript">
+        alert("Disquera registrada con exito");
+        window.location.href="catalogo_disqueras.php";
+        </script>';
+
     } else {
 #        echo "ya se encuentra registrado el disco<br/>";
         pg_close($con);
         header('Location: form_disquera.php?error=3');
     }
 
-    pg_close($con);
-    header('Location: catalogo_disqueras.php');
 #}
    
 ?>

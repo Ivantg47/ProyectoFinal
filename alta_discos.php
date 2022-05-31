@@ -129,7 +129,10 @@
             }
 
             pg_close($con);
-            header('Location: catalogo_disco.php');
+            echo'<script type="text/javascript">
+            alert("Disco registrado con exito");
+            window.location.href="catalogo_artistas.php";
+            </script>';
         }
 
     } else {
