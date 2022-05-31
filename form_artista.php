@@ -1,16 +1,16 @@
-//form_artista.php: Formato para registrar artistas.
+<!-- //form_artista.php: Formato para registrar artistas.-->
 
 <?php
 
 //verificar sesion
-#session_start();
-#if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+session_start();
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 ?>	
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"> // Esta línea nos permite que el área que es visible para el usuario en la pantalla se ajuste al dispositivo que utiliza.
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- // Esta línea nos permite que el área que es visible para el usuario en la pantalla se ajuste al dispositivo que utiliza.-->
 
 	<link rel="stylesheet" href="css/estilo1.css" type="text/css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -57,7 +57,7 @@
 
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_artista.php">
-			<h4 class="col-12">Alta Artista</h4>  // En esta sección se da de alta a los artistas y se piden los datos necesarios.
+			<h4 class="col-12">Alta Artista</h4> <!--  // En esta sección se da de alta a los artistas y se piden los datos necesarios.-->
 
       <div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
@@ -87,11 +87,13 @@
         
       </div>
       <div class="col-md-6">
-        <button>Registrar</button> //// se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_artista.php).
+        <button>Registrar</button> <!-- //// se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_artista.php).-->
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton">Cancelar</button> // se hace uso de un botón para cancelar el registro de productores.
+
+        <button class="form btnbutton" onclick="window.location='catalogo_artistas.php';return false;">Cancelar</button><!-- // se hace uso de un botón para cancelar el registro de productores.-->
+
       </div>
       
 		</form>
@@ -100,7 +102,7 @@
 </html>
 
 <?php
-/* }  	else {
+ }  	else {
 		header('Location: index.php?error=1');	
-	}*/
+	}
 ?>

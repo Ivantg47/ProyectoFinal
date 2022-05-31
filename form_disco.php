@@ -3,8 +3,8 @@
 <?php
 
 //verificar sesion
-session_start();
-if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+#session_start();
+#if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 ?>	
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 	      </ul>
 	    </nav>
   	</header>
-
+<main>
 	<div class="form alta">
 		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
 			<h4 class="col-12">Alta discos</h4> // En esta sección se da de alta discos y se piden los datos necesarios.
@@ -169,7 +169,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 			</div>
 		</form>
 	</div>
-
+</main>
 	<div class="form-group fieldGroupCopy" style="display: none;">
 	    <div class="input-group">
 	        <input type="text" name="tituloCancion[]" id="tituloCancion" class="form-control" placeholder="titulo de canción"/>
@@ -190,8 +190,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 	</div>
 </body>
 </html>
-<?php }  	else {
+<?php /*}  	else {
 		header('Location: index.php?error=1');
 	
-	}
+	}*/
 ?>

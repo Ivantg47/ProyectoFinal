@@ -3,8 +3,8 @@
 //
 
 //verificar sesion
-#session_start();
-#if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
+session_start();
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
   include 'conexion.php';
   $id = $_GET['id'];
@@ -25,7 +25,6 @@
 	<script src="js/01.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/validar.js"></script>
-  <?php include ('consulta_artista.php'); ?>
 
 	<title>Baja de Artista</title>
 
@@ -64,11 +63,12 @@
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="eliminar_artista.php">
+		<form name="subir" id="subir" class="row g-3" method="post" action="elimina_artista.php">
 
 			<h4 class="col-12">Baja Artista</h4>
 
-      <input id="id_artista" type="text" name="id" value="<?php echo $artista['id']; ?>" style="display: none" > 
+      <input id="doc" type="text" name="doc" value="elimina_artista.php" style="display: none" > 
+      <input id="id" type="text" name="id" value="<?php echo $artista['id']; ?>" style="display: none" > 
 
       <div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
@@ -102,7 +102,7 @@
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton btMar">Cancelar</button>
+        <button id="cancelar" class="form btnbutton btMar" onclick="window.location='catalogo_artistas.php';return false;">Cancelar</button>
       </div>
       
 		</form>
@@ -111,7 +111,7 @@
 </html>
 
 <?php
-/* }  	else {
+ }  	else {
 		header('Location: index.php?error=1');	
-	}*/
+	}
 ?>

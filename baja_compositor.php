@@ -2,10 +2,10 @@
 
 //Sirve para dar de baja a los compositores registrados
 
-/*
+
 //verificar sesion
 session_start();
-if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
+if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ 
   include 'conexion.php';
   $id = $_GET['id'];
   $consulta = "SELECT compositor_id id, nombre, apellido, pais_nacimiento pais, fecha_nacimiento anio from compositores where compositor_id=".$id;
@@ -63,10 +63,11 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
+		<form name="subir" id="subir" class="row g-3" method="post" action="elimina_compositor.php">
 			<h4 class="col-12">Baja Compositor</h4>
 
-      <input id="id_compositor" type="text" name="id" value="<?php echo $compositor['id']; ?>" style="display: none" > 
+      <input id="doc" type="text" name="doc" value="elimina_compositor.php" style="display: none" > 
+      <input id="id" type="text" name="id" value="<?php echo $compositor['id']; ?>" style="display: none" > 
 
       <div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
@@ -96,14 +97,14 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton">Cancelar</button>
+        <button class="form btnbutton" onclick="window.location='catalogo_compositores.php';return false;">Cancelar</button>
       </div>
 
 		</form>
 	</div>
 </body>
 </html>
-<?php /* }  	else {
+<?php  }  	else {
 		header('Location: index.php?error=1');	
-	} */
+	} 
 ?>
