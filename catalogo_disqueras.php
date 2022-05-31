@@ -1,4 +1,5 @@
 <?php
+//Muestra una lista de todas las disqueras y da opciones de eliminación y modificación
 
 //verificar sesion
 session_start();
