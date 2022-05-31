@@ -114,8 +114,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 								echo "<td>".$cont."</td>";
 								echo "<td>".$row['cancion']."</td>";
 								echo "<td>".$row['compositor']."</td>";
-								echo "<td><a class=\"btn btn-outline-secondary\" href='catalogo_discos_desc.php?id=".$row['id']."'>Editar</a></td>";
-								echo "<td><a class=\"btn btn-outline-danger\" href='formularioEl.php?id=".$row['id']."'>Borrar</a></td>";
+								
 								echo "</tr>";
 							}
 						?>	

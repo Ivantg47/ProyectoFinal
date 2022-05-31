@@ -73,8 +73,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 							echo "<td>".$row['productor_id']."</td>";
 							echo "<td>".$nombre."</td>";
 							echo "<td>".$row['fecha_nacimiento']."</td>";
-							echo "<td><a class=\"btn btn-outline-secondary\" href='catalogo_discos_desc.php?id=".$row['grupo_id']."'>Editar</a></td>";
-							echo "<td><a class=\"btn btn-outline-danger\" href='formularioEl.php?id=".$row['grupo_id']."'>Borrar</a></td>";
+							echo "<td><a class=\"btn btn-outline-secondary\" href='edita_productor.php?id=".$row['productor_id']."'>Editar</a></td>";
+							echo "<td><a class=\"btn btn-outline-danger\" href='baja_productor.php?id=".$row['productor_id']."'>Borrar</a></td>";
 							echo "</tr>";
 						}
 					?>	

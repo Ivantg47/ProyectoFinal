@@ -1,4 +1,5 @@
 <?php
+//Sirve para realizar la edición de los datos de los artistas
 
 //verificar sesion
 session_start();
