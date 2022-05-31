@@ -1,4 +1,4 @@
-//form_grupo.php: Aquí si la sesión está activa se puede registrar un grupo.
+//form_grupo.php: Formato para registrar un grupo.
 
 <?php
 /*
