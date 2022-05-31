@@ -1,4 +1,6 @@
 <?php
+//Muestra una lista de todos los discos registrados y da opciones de eliminación y modificación
+
 
 //verificar sesion
 session_start();
