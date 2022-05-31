@@ -1,3 +1,4 @@
+//login.php: Aqui se hace la conexión con la base de datos haciendo uso de los datos que se mandan de index.php
 <?php
 //conexion a la bd
 

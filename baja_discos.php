@@ -1,5 +1,7 @@
 <?php
 
+// Sirve para dar de baja de la bd los discos registrados
+
 //verificar sesion
 #session_start();
 #if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){

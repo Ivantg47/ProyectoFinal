@@ -1,4 +1,6 @@
 <?php
+//Sirve para dar de baja a los productores registrados
+
 /*
 //verificar sesion
 session_start();

@@ -1,4 +1,7 @@
 <?php
+
+//Sirve para dar de baja a los compositores registrados
+
 /*
 //verificar sesion
 session_start();

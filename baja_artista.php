@@ -1,4 +1,6 @@
 <?php
+//Sirve para dar de baja a los artistas registrados
+//
 
 //verificar sesion
 session_start();

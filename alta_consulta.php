@@ -1,4 +1,7 @@
 <?php
+
+//Sirve para realizar consultas
+
 include ('conexion.php');
 
 $consulta = "SELECT grupo_id id, nombre from grupos order by 2";

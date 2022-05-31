@@ -1,3 +1,6 @@
+<!--eliminar_artista.php: archivo que permite que eliminar un artista.
+// Esta operación se hace a partir del id de artista.
+-->
 <?php
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
@@ -24,4 +27,8 @@ if($query){
         </script>';
 }
 }
+
+
+pg_close($con);
+
 ?>
