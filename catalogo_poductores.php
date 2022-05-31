@@ -1,6 +1,8 @@
 <?php
 
 //verificar sesion
+//Permite mostrar a los productores.
+
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
