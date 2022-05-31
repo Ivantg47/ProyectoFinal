@@ -9,7 +9,6 @@
   $consulta = "SELECT d.disco_id, d.titulo AS titulo_disco, g.grupo_id, g.nombre AS nombre_grupo, d.año AS anio_disco, d.genero AS genero_disco, d.costo AS costo_disco, d.portada, d.disquera_id, disc.nombre, prod.productor_id, prod.nombre, prod.apellido AS disquera_nombre, c.cancion_id, c.titulo AS titulo_cancion, c2.compositor_id, c2.nombre AS nombre_compositor, c2.apellido AS apellido_compositor, c2.pais_nacimiento, c2.fecha_nacimiento FROM grupos g INNER JOIN discos d ON d.grupo_id = g.grupo_id INNER JOIN disqueras disc on disc.disquera_id = d.disquera_id INNER JOIN disco_cancion dc ON d.disco_id = dc.disco_id INNER JOIN productores prod ON prod.productor_id = d.productor_id INNER JOIN canciones c ON dc.cancion_id = c.cancion_id INNER JOIN cancion_compositor cc ON c.cancion_id = cc.cancion_id INNER JOIN compositores c2 ON c2.compositor_id=cc.compositor_id WHERE d.disco_id=".$id."order by d.disco_id";
   $resultado = pg_query($con,$consulta);
   $row = pg_fetch_assoc($resultado, 0);
-  var_dump($row);
   pg_close($con);
 ?>	
 <!DOCTYPE html>
