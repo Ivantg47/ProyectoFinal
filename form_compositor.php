@@ -1,3 +1,5 @@
+//form_compositor.php: Formato para registrar compositores.
+
 <?php
 /*
 //verificar sesion
@@ -8,7 +10,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> // Esta línea nos permite que el área que es visible para el usuario en la pantalla se ajuste al dispositivo que utiliza.
 
 	<link rel="stylesheet" href="css/estilo1.css" type="text/css"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -54,8 +56,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
   </header>
 
 	<div class="form alta">
-		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_discos.php">
-			<h4 class="col-12">Alta Compositor</h4>
+		<form name="subir" id="subir" class="row g-3" method="post" enctype="multipart/form-data" action="alta_compositor.php">
+			<h4 class="col-12">Alta Compositor</h4> // En esta sección se da de alta a los compositores y se piden los datos necesarios.
 
       <div class="col-md-6">
         <label for="nombre" class="altaLabel">Nombre:</label> 
@@ -81,11 +83,11 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){ */
         
       </div>
       <div class="col-md-6">
-        <button>Registrar</button>
+        <button>Registrar</button> // se hace uso de un botón para registrar los datos del productor (estos datos se mandan a alta_compositor.php).
       </div>
 
       <div class="col-md-6">
-        <button class="form btnbutton">Cancelar</button>
+        <button class="form btnbutton">Cancelar</button> // se hace uso de un botón para cancelar el registro de productores.
       </div>
 
 		</form>
