@@ -1,3 +1,5 @@
+//Sirve para dar de alta los discos
+
 <?php
 #session_start();
 #if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
