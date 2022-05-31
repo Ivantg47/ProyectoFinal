@@ -79,7 +79,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 							echo "<td>".$nombre."</td>";
 							echo "<td>".$row['pais_nacimiento']."</td>";
                             				echo "<td>".$row['fecha_nacimiento']."</td>";
-							echo "<td><a class=\"btn btn-outline-secondary\" href='edita_compositar.php?id=".$row['compositor_id']."'>Editar</a></td>";
+							echo "<td><a class=\"btn btn-outline-secondary\" href='edita_compositor.php?id=".$row['compositor_id']."'>Editar</a></td>";
 							echo "<td><a class=\"btn btn-outline-danger\" href='baja_compositor.php?id=".$row['compositor_id']."'>Borrar</a></td>";
 							echo "</tr>";
 						}
