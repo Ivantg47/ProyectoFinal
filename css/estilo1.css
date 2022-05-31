@@ -278,3 +278,12 @@ body {
 .btMar{
   margin-top: 60px;
 }
+.card-body{
+  color: white;
+}
+td{
+  color: white;
+}
+th{
+  color: white;
+}
