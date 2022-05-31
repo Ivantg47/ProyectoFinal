@@ -34,7 +34,7 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 			            <li><a href="catalogo_artistas.php">Artista</a></li>
 			            <li><a href="catalogo_compositores.php">Compositor</a></li>
 			            <li><a href="catalogo_discos.php">Disco</a></li>
-			            <li><a href="catalogo_disqueas.php">Disquera</a></li>
+			            <li><a href="catalogo_disqueras.php">Disquera</a></li>
 			            <li><a href="catalogo_grupos.php">Grupo</a></li>
 			            <li><a href="catalogo_poductores.php">Productor</a></li>
 			          </ul>
