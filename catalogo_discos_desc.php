@@ -1,5 +1,7 @@
 <?php
-
+//Muestra una lista de todos los discos
+//
+//
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){

@@ -1,5 +1,6 @@
-// Sirve para dar de baja de la bd los discos registrados
 <?php
+
+// Sirve para dar de baja de la bd los discos registrados
 
 //verificar sesion
 #session_start();

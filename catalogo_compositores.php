@@ -1,5 +1,8 @@
 <?php
 
+//Muestra una lista de los compositores y da opciones de modificación y eliminación
+
+
 //verificar sesion
 session_start();
 if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){

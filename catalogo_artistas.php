@@ -1,4 +1,6 @@
 <?php
+//Muestra una lista de los artistas registrados y te da opciones de eliminación y modificación
+
 
 //verificar sesion
 session_start();
