@@ -72,8 +72,8 @@ if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 							echo "<td>".$row['grupo_id']."</td>";
 							echo "<td>".$row['nombre']."</td>";
 							echo "<td>".$row['pais']."</td>";
-							echo "<td><a class=\"btn btn-outline-secondary\" href='catalogo_discos_desc.php?id=".$row['grupo_id']."'>Editar</a></td>";
-							echo "<td><a class=\"btn btn-outline-danger\" href='formularioEl.php?id=".$row['grupo_id']."'>Borrar</a></td>";
+							echo "<td><a class=\"btn btn-outline-secondary\" href='edita_grupos.php?id=".$row['grupo_id']."'>Editar</a></td>";
+							echo "<td><a class=\"btn btn-outline-danger\" href='baja_grupos.php?id=".$row['grupo_id']."'>Borrar</a></td>";
 							echo "</tr>";
 						}
 					?>	
