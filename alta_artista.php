@@ -1,6 +1,7 @@
+<?php
 //Aquí se dan de alta a los nuevos artistas en la base de datos. Se validan los datos ingresados y se insertan en la bd.
 
-<?php
+
 #session_start();
 #if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 

@@ -1,6 +1,6 @@
+<?php
 //Sirve para dar de lata las diqueras
 
-<?php
 #session_start();
 #if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
 
