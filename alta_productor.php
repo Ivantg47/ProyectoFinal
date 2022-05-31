@@ -1,3 +1,5 @@
+//Sirve para dar de alta a los productores
+
 <?php
 #session_start();
 #if (isset($_SESSION['valida']) && $_SESSION['valida'] == true){
