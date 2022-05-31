@@ -1,4 +1,4 @@
-//form_productor.php: Aquí si la sesión está activa se puede registrar un productor.
+//form_productor.php: Formato para registrar un productor.
 
 <?php
 /*
